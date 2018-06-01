@@ -3,7 +3,9 @@ import * as firebase from "firebase";
 export default {
   state: {
     loading: false,
-    range:true
+    range:true,
+    roles:false,
+    cycle:false
   },
   mutations: {
     SET_LOADING(state, payload) {
@@ -11,6 +13,12 @@ export default {
     },
     SET_RANGE(state, payload) {
       state.range = payload;
+    },
+    SET_ROLES(state, payload) {
+      state.roles = payload;
+    },
+    SET_CYCLE(state, payload) {
+      state.cycle = payload;
     },
   },
   actions: {
@@ -22,6 +30,12 @@ export default {
     },
     range(state) {
       return state.range;
+    },
+    roles(state) {
+      return state.roles;
+    },
+    cycle(state) {
+      return state.cycle;
     }
   }
 };

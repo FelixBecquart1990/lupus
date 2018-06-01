@@ -1,8 +1,8 @@
 <template>
   <div>
-      <Range ref="range"/>
-      <Roles ref="roles"/>
-      <Cycle ref="cycle"/>
+      <Range v-if="range" ref="range"/>
+      <Roles v-if="roles" ref="roles"/>
+      <Cycle v-if="cycle" ref="cycle"/>
   </div>
 </template>
 
@@ -17,6 +17,17 @@ export default {
     Range,
     Roles,
     Cycle
+  },
+  computed: {
+    range() {
+      return this.$store.getters.range;
+    },
+    roles() {
+      return this.$store.getters.roles;
+    },
+    cycle() {
+      return this.$store.getters.cycle;
+    }
   }
 };
 </script>

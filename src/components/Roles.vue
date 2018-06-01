@@ -1,6 +1,8 @@
 <template>
 <div>
-  <v-btn @click="getTeam()">Discover first player</v-btn>
+  <v-flex center>
+    <v-btn @click="getTeam()">Discover first player</v-btn>
+  </v-flex>
 </div>
 </template>
 
@@ -19,6 +21,8 @@ export default {
         this.team.push("villager");
       }
       console.log(this.team);
+      this.$store.commit("SET_ROLES", false);
+      this.$store.commit("SET_CYCLE", true);
     }
   },
   computed: {

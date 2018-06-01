@@ -34,6 +34,8 @@ export default {
   methods: {
     storeNumberOfPlayers() {
       this.$store.commit("SET_NUMBER_OF_PLAYERS", this.numberOfPlayers);
+      this.$store.commit("SET_RANGE", false);
+      this.$store.commit("SET_ROLES", true);
     }
   }
 };
