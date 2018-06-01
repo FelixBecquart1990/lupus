@@ -3,7 +3,7 @@
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
         <img src="../../../static/img/emojis/facepalm.png" alt="day" class="mb-5">
-        <p class="text-xs-center">Le village a tué le joueur {{dead.player}} <br>C'était un villageois</p>
+        <p class="text-xs-center">Le village a tué le joueur {{dead.player}} <br>C'était un {{dead.role}}</p>
       </v-layout>
     </v-slide-y-transition>
   </v-container>

@@ -2,8 +2,8 @@
   <v-container fluid>
     <v-slide-y-transition mode="out-in">
       <v-layout>
-        <v-flex v-for="i in this.numberOfPlayers" xs12>
-          <v-btn @click="declarePlayer(i)" @click.native.stop="dialog = true" block color="primary" dark>{{ i }}</v-btn>
+        <v-flex v-for="i in numberOfPlayers" xs12>
+          <v-btn v-if="team[i-1].killed==false" @click="declarePlayer(i)" @click.native.stop="dialog = true" block color="primary" dark>{{ i }}</v-btn>
         </v-flex>
         <v-dialog v-model="dialog" max-width="290">
           <v-card>
@@ -21,38 +21,51 @@
 </template>
 
 <script>
-  export default {
-    name: "ChooseDeadByWolfes",
-    methods: {
-      declarePlayer(i) {
-        this.declaredPlayer = i;
-        console.log("you have declared player", this.declaredPlayer);
-      },
-      killPlayer(i) {
-        this.$store.commit("SET_DEAD", this.$store.getters.team[this.declaredPlayer-1]);
-        console.log(this.$store.getters.dead)
-        console.log("you have killed player", i);
-        this.$store.commit("SET_CHOOSE_DEAD_WOLFES", false);
-        this.$store.commit("SET_DAY", true);
-      }
+export default {
+  name: "ChooseDeadByWolfes",
+  methods: {
+    declarePlayer(i) {
+      this.declaredPlayer = i;
+      console.log("you have declared player", this.declaredPlayer);
     },
-    computed: {
-      numberOfPlayers() {
-        return this.$store.getters.numberOfPlayers;
-      }
-    },
-    data () {
-      return {
-        dialog: false,
-        declaredPlayer: 0
-      }
+    killPlayer(i) {
+      this.$store.commit(
+        "SET_DEAD",
+        this.$store.getters.team[this.declaredPlayer - 1]
+      );
+
+      this.newTeam = this.$store.getters.team;
+      this.newTeam[i - 1].killed = true;
+      this.$store.commit("SET_TEAM", this.newTeam);
+
+      console.log(this.$store.getters.dead);
+      console.log("you have killed player", i);
+      this.$store.commit("SET_CHOOSE_DEAD_WOLFES", false);
+      this.$store.commit("SET_DAY", true);
     }
-  };
+  },
+  computed: {
+    numberOfPlayers() {
+      return this.$store.getters.numberOfPlayers;
+    },
+    team() {
+      return this.$store.getters.team;
+    }
+  },
+  data() {
+    return {
+      dialog: false,
+      newTeam: null,
+      declaredPlayer: 0
+    };
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {
