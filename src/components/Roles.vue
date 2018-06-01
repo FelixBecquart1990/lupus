@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
 
 export default {
   name: "Roles",
@@ -19,7 +18,9 @@ export default {
 
   },
   computed: {
-    ...mapGetters(["numberOfPlayers"])
+    numberOfPlayers() {
+      return this.$store.getters.numberOfPlayers;
+    },
   },
   methods:{
 
