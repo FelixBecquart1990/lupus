@@ -3,18 +3,21 @@
     cycle
     <Night ref="night"/>
     <WerewolfSpot ref="werewolfSpot"/>
+    <ChooseDead ref="chooseDead"/>
   </div>
 </template>
 
 <script>
   import Night from "../components/cycle/Night";
   import WerewolfSpot from "../components/cycle/WerewolfSpot";
+  import ChooseDead from "../components/cycle/ChooseDead";
 
   export default {
     name: "Cycle",
     components: {
       Night,
-      WerewolfSpot
+      WerewolfSpot,
+      ChooseDead
     }
   };
 </script>
