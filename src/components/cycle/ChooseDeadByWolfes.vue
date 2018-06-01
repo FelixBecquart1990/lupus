@@ -29,6 +29,8 @@
         console.log("you have declared player", this.declaredPlayer);
       },
       killPlayer(i) {
+        this.$store.commit("SET_DEAD", this.$store.getters.team[this.declaredPlayer-1]);
+        console.log(this.$store.getters.dead)
         console.log("you have killed player", i);
         this.$store.commit("SET_CHOOSE_DEAD_WOLFES", false);
         this.$store.commit("SET_DAY", true);
