@@ -6,7 +6,7 @@
     </v-flex>
     <v-flex xs8 offset-xs2>
       <v-slider
-        v-model="value"
+        v-model="numberOfPlayers"
         thumb-label
         step="1"
         ticks
@@ -15,26 +15,29 @@
         ></v-slider>
     </v-flex>
     <v-flex xs4 offset-xs4 center>
-      <h2 class="text-xs-center">{{ value }}</h2>
+      <h2 class="text-xs-center">{{ numberOfPlayers }}</h2>
     </v-flex>
     <v-flex xs4 offset-xs4 center>
-      <v-btn block color="primary" dark>Play</v-btn>
+      <v-btn @click="storeNumberOfPlayers()" block color="primary" dark>Play</v-btn>
     </v-flex>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "Range",
-  data () {
+  data() {
     return {
-      value: 0
+      numberOfPlayers: 4
+    };
+  },
+  methods: {
+    storeNumberOfPlayers() {
+      this.$store.commit("SET_NUMBER_OF_PLAYERS", this.numberOfPlayers);
     }
   }
 };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>
