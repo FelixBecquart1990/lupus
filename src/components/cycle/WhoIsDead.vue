@@ -1,30 +1,23 @@
 <template>
-  <v-container fluid @click="next()">
+  <v-container fluid>
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
-        <img src="../../../static/img/emojis/fuck.png" alt="fuck" class="mb-5">
-        <p class="text-xs-center"> Les loup garous se réveillent et désignent leur victime </p>
+        <img src="../../../static/img/emojis/facepalm.png" alt="day" class="mb-5">
+        <p class="text-xs-center">Le joueur X a été tué </br>C'était un villageois</p>
       </v-layout>
     </v-slide-y-transition>
   </v-container>
 </template>
 
 <script>
-export default {
-  name: "WerewolfSpot",
-  methods: {
-    next() {
-      this.$store.commit("SET_WEREWOLF_SPOT", false);
-      this.$store.commit("SET_CHOOSE_DEAD", true);
-    }
-  }
-};
+  export default {
+    name: "WhoIsDead"
+  };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
+h1, h2 {
   font-weight: normal;
 }
 ul {
