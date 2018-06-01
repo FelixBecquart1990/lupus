@@ -14,13 +14,13 @@ export default {
   data() {
     return {
       team: [],
-      player:0
+      player: 0
     };
   },
   mounted() {
-    this.team = ["wolf"];
+    let roles = ["wolf"];
     for (let i = 0; i < this.numberOfPlayers - 1; i++) {
-      this.team.push("villager");
+      roles.push("villager");
     }
 
     const shuffleArray = arr =>
@@ -29,19 +29,23 @@ export default {
         .sort((a, b) => a[0] - b[0])
         .map(a => a[1]);
 
-    this.team = shuffleArray(this.team);
+    roles = shuffleArray(roles);
+
+    for (let i = 0; i < this.numberOfPlayers; i++) {
+      this.team.push({role:roles[i], killed:false, player:i+1});
+    }
+
     this.$store.commit("SET_TEAM", this.team);
 
     console.log(this.team);
   },
   methods: {
     discoverPlayer() {
-      
-      alert(this.team[this.player])
-      this.player++
-      if (this.player>=this.team.length){
-      this.$store.commit("SET_ROLES", false);
-      this.$store.commit("SET_CYCLE", true);
+      alert(this.team[this.player].role);
+      this.player++;
+      if (this.player >= this.team.length) {
+        this.$store.commit("SET_ROLES", false);
+        this.$store.commit("SET_CYCLE", true);
       }
     }
   },

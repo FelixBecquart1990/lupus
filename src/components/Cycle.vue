@@ -1,9 +1,9 @@
 <template>
   <div>
     cycle
-    <Night ref="night"/>
-    <WerewolfSpot ref="werewolfSpot"/>
-    <ChooseDead ref="chooseDead"/>
+    <Night v-if="night" ref="night"/>
+    <WerewolfSpot v-if="werewolfSpot" ref="werewolfSpot"/>
+    <ChooseDead v-if="chooseDead" ref="chooseDead"/>
   </div>
 </template>
 
@@ -18,7 +18,18 @@
       Night,
       WerewolfSpot,
       ChooseDead
+    },
+    computed: {
+    night() {
+      return this.$store.getters.night;
+    },
+    werewolfSpot() {
+      return this.$store.getters.werewolfSpot;
+    },
+    chooseDead() {
+      return this.$store.getters.chooseDead;
     }
+  }
   };
 </script>
 

@@ -5,7 +5,10 @@ export default {
     loading: false,
     range: true,
     roles: false,
-    cycle: false
+    cycle: false,
+    night: true,
+    werewolfSpot: false,
+    chooseDead: false
   },
   mutations: {
     SET_LOADING(state, payload) {
@@ -19,6 +22,15 @@ export default {
     },
     SET_CYCLE(state, payload) {
       state.cycle = payload;
+    },
+    SET_NIGHT(state, payload) {
+      state.night = payload;
+    },
+    SET_WEREWOLF_SPOT(state, payload) {
+      state.werewolfSpot = payload;
+    },
+    SET_CHOOSE_DEAD(state, payload) {
+      state.chooseDead = payload;
     }
   },
   actions: {
@@ -42,6 +54,15 @@ export default {
     },
     cycle(state) {
       return state.cycle;
+    },
+    night(state) {
+      return state.night;
+    },
+    werewolfSpot(state) {
+      return state.werewolfSpot;
+    },
+    chooseDead(state) {
+      return state.chooseDead;
     }
   }
 };
