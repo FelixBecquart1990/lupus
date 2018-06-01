@@ -15,6 +15,9 @@ export default {
     return {
     };
   },
+  mounted(){
+
+  },
   computed: {
     ...mapGetters(["numberOfPlayers"])
   },
