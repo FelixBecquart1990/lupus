@@ -1,11 +1,13 @@
 <template>
   <div>
     cycle
-    <Night ref="night"/>
-    <WerewolfSpot ref="werewolfSpot"/>
-    <ChooseDead ref="chooseDead"/>
-    <Day ref="day"/>
-    <WhoIsDead ref="whoIsDead"/>
+
+    <Night v-if="night" ref="night"/>
+    <WerewolfSpot v-if="werewolfSpot" ref="werewolfSpot"/>
+    <ChooseDead v-if="chooseDead" ref="chooseDead"/>
+    <Day v-if="day" ref="day"/>
+    <WhoIsDead v-if="whoIsDead" ref="whoIsDead"/>
+
   </div>
 </template>
 
@@ -15,7 +17,6 @@
   import ChooseDead from "../components/cycle/ChooseDead";
   import Day from "../components/cycle/Day";
   import WhoIsDead from "../components/cycle/WhoIsDead";
-  import VillageSpot from "../components/cycle/VillageSpot";
 
   export default {
     name: "Cycle",
@@ -24,15 +25,26 @@
       WerewolfSpot,
       ChooseDead,
       Day,
-      WhoIsDead,
-      VillageSpot
+      WhoIsDead
+    },
+    computed: {
+      night() {
+        return this.$store.getters.night;
+      },
+      werewolfSpot() {
+        return this.$store.getters.werewolfSpot;
+      },
+      chooseDead() {
+        return this.$store.getters.chooseDead;
+      }
     }
   };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {
