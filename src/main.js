@@ -28,7 +28,7 @@ new Vue({
   store,
   components: { App },
   template: '<App/>',
-  created() {
+  /*created() {
     firebase.initializeApp({
       apiKey: "AIzaSyBYozTouIa4zvAF9Odu2ng4xoVdxo2NFCo",
       authDomain: "play-lupus.firebaseapp.com",
@@ -45,5 +45,5 @@ new Vue({
         console.log("no user");
       }
     });
-  }
+  }*/
 })
