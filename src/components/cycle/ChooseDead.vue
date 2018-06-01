@@ -30,6 +30,8 @@
       },
       killPlayer(i) {
         console.log("you have killed player", i);
+        this.$store.commit("SET_CHOOSE_DEAD", false);
+        this.$store.commit("SET_DAY", true);
       }
     },
     computed: {

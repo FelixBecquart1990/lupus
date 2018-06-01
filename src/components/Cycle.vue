@@ -7,38 +7,50 @@
     <ChooseDead v-if="chooseDead" ref="chooseDead"/>
     <Day v-if="day" ref="day"/>
     <WhoIsDead v-if="whoIsDead" ref="whoIsDead"/>
+    <VillageSpot v-if="villageSpot" ref="villageSpot"/>
 
   </div>
 </template>
 
 <script>
-  import Night from "../components/cycle/Night";
-  import WerewolfSpot from "../components/cycle/WerewolfSpot";
-  import ChooseDead from "../components/cycle/ChooseDead";
-  import Day from "../components/cycle/Day";
-  import WhoIsDead from "../components/cycle/WhoIsDead";
+import Night from "../components/cycle/Night";
+import WerewolfSpot from "../components/cycle/WerewolfSpot";
+import ChooseDead from "../components/cycle/ChooseDead";
+import Day from "../components/cycle/Day";
+import WhoIsDead from "../components/cycle/WhoIsDead";
+import VillageSpot from "../components/cycle/VillageSpot";
 
-  export default {
-    name: "Cycle",
-    components: {
-      Night,
-      WerewolfSpot,
-      ChooseDead,
-      Day,
-      WhoIsDead
+export default {
+  name: "Cycle",
+  components: {
+    Night,
+    WerewolfSpot,
+    ChooseDead,
+    Day,
+    WhoIsDead,
+    VillageSpot
+  },
+  computed: {
+    night() {
+      return this.$store.getters.night;
     },
-    computed: {
-      night() {
-        return this.$store.getters.night;
-      },
-      werewolfSpot() {
-        return this.$store.getters.werewolfSpot;
-      },
-      chooseDead() {
-        return this.$store.getters.chooseDead;
-      }
+    werewolfSpot() {
+      return this.$store.getters.werewolfSpot;
+    },
+    chooseDead() {
+      return this.$store.getters.chooseDead;
+    },
+    day() {
+      return this.$store.getters.day;
+    },
+    whoIsDead() {
+      return this.$store.getters.whoIsDead;
+    },
+    villageSpot() {
+      return this.$store.getters.villageSpot;
     }
-  };
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

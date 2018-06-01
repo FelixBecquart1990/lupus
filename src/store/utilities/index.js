@@ -8,7 +8,10 @@ export default {
     cycle: false,
     night: true,
     werewolfSpot: false,
-    chooseDead: false
+    chooseDead: false,
+    day: false,
+    whoIsDead: false,
+    villageSpot: false
   },
   mutations: {
     SET_LOADING(state, payload) {
@@ -31,7 +34,16 @@ export default {
     },
     SET_CHOOSE_DEAD(state, payload) {
       state.chooseDead = payload;
-    }
+    },
+    SET_DAY(state, payload) {
+      state.day = payload;
+    },
+    SET_WHO_IS_DEAD(state, payload) {
+      state.whoIsDead = payload;
+    },
+    SET_VILLAGE_SPOT(state, payload) {
+      state.villageSpot = payload;
+    },
   },
   actions: {
     shuffle({ commit }, a) {
@@ -63,6 +75,15 @@ export default {
     },
     chooseDead(state) {
       return state.chooseDead;
-    }
+    },
+    day(state) {
+      return state.day;
+    },
+    whoIsDead(state) {
+      return state.whoIsDead;
+    },
+    villageSpot(state) {
+      return state.villageSpot;
+    },
   }
 };

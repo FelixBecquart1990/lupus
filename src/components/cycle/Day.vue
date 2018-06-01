@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container fluid @click="next()">
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
         <img src="../../../static/img/emojis/day.png" alt="day" class="mb-5">
@@ -10,14 +10,21 @@
 </template>
 
 <script>
-  export default {
-    name: "Day"
-  };
+export default {
+  name: "Day",
+  methods: {
+    next() {
+      this.$store.commit("SET_DAY", false);
+      this.$store.commit("SET_WHO_IS_DEAD", true);
+    }
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {
