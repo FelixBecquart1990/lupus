@@ -11,7 +11,7 @@
 
 <script>
   export default {
-    name: "Night"
+    name: "WerewolfSpot"
   };
 </script>
 
