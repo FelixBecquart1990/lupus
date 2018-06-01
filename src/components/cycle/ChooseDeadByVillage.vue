@@ -31,7 +31,7 @@
       killPlayer(i) {
         console.log("you have killed player", i);
         this.$store.commit("SET_CHOOSE_DEAD_VILLAGE", false);
-        this.$store.commit("SET_NIGHT", true);
+        this.$store.commit("SET_WHO_IS_DEAD_BY_VILLAGE", true);
       }
     },
     computed: {

@@ -3,7 +3,7 @@
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
         <img src="../../../static/img/emojis/facepalm.png" alt="day" class="mb-5">
-        <p class="text-xs-center">Le joueur {{dead.player}} a été tué <br>C'était un villageois</p>
+        <p class="text-xs-center">Le village a tué le joueur {{dead.player}} <br>C'était un villageois</p>
       </v-layout>
     </v-slide-y-transition>
   </v-container>
@@ -11,11 +11,11 @@
 
 <script>
 export default {
-  name: "WhoIsDead",
+  name: "WhoIsDeadByVillage",
   methods: {
     next() {
-      this.$store.commit("SET_WHO_IS_DEAD", false);
-      this.$store.commit("SET_VILLAGE_SPOT", true);
+      this.$store.commit("SET_WHO_IS_DEAD_BY_VILLAGE", false);
+      this.$store.commit("SET_VILLAGE_NIGHT", true);
     }
   },
   computed: {

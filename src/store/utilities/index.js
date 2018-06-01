@@ -11,7 +11,7 @@ export default {
     chooseDeadByWolfes: false,
     chooseDeadByVillage: false,
     day: false,
-    whoIsDead: false,
+    whoIsDeadByWolfes: false,
     villageSpot: false
   },
   mutations: {
@@ -42,8 +42,11 @@ export default {
     SET_DAY(state, payload) {
       state.day = payload;
     },
-    SET_WHO_IS_DEAD(state, payload) {
-      state.whoIsDead = payload;
+    SET_WHO_IS_DEAD_BY_WOLFES(state, payload) {
+      state.whoIsDeadByWolfes = payload;
+    },
+    SET_WHO_IS_DEAD_BY_VILLAGE(state, payload) {
+      state.whoIsDeadByVillage = payload;
     },
     SET_VILLAGE_SPOT(state, payload) {
       state.villageSpot = payload;
@@ -86,8 +89,11 @@ export default {
     day(state) {
       return state.day;
     },
-    whoIsDead(state) {
-      return state.whoIsDead;
+    whoIsDeadByWolfes(state) {
+      return state.whoIsDeadByWolfes;
+    },
+    whoIsDeadByVillage(state) {
+      return state.whoIsDeadByVillage;
     },
     villageSpot(state) {
       return state.villageSpot;

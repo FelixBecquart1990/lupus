@@ -2,8 +2,8 @@
   <v-container fluid @click="next()">
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
-        <img src="../../../static/img/emojis/day.png" alt="day" class="mb-5">
-        <p class="text-xs-center"> Le jour se lève, le village se réveille</p>
+        <img src="../../../static/img/emojis/facepalm.png" alt="day" class="mb-5">
+        <p class="text-xs-center">Le joueur {{dead.player}} a été tué <br>C'était un villageois</p>
       </v-layout>
     </v-slide-y-transition>
   </v-container>
@@ -11,11 +11,16 @@
 
 <script>
 export default {
-  name: "Day",
+  name: "WhoIsDeadByWolfes",
   methods: {
     next() {
-      this.$store.commit("SET_DAY", false);
-      this.$store.commit("SET_WHO_IS_DEAD_BY_WOLFES", true);
+      this.$store.commit("SET_WHO_IS_DEAD_BY_WOLFES", false);
+      this.$store.commit("SET_VILLAGE_SPOT", true);
+    }
+  },
+  computed: {
+    dead() {
+      return this.$store.getters.dead;
     }
   }
 };

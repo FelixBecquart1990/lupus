@@ -7,7 +7,8 @@
     <ChooseDeadByWolfes v-if="chooseDeadByWolfes" ref="chooseDeadByWolfes"/>
     <ChooseDeadByVillage v-if="chooseDeadByVillage" ref="chooseDeadByVillage"/>
     <Day v-if="day" ref="day"/>
-    <WhoIsDead v-if="whoIsDead" ref="whoIsDead"/>
+    <WhoIsDeadByWolfes v-if="whoIsDeadByWolfes" ref="whoIsDeadByWolfes"/>
+    <WhoIsDeadByVillage v-if="whoIsDeadByVillage" ref="whoIsDeadByVillage"/>
     <VillageSpot v-if="villageSpot" ref="villageSpot"/>
 
   </div>
@@ -19,7 +20,8 @@ import WerewolfSpot from "../components/cycle/WerewolfSpot";
 import ChooseDeadByWolfes from "../components/cycle/ChooseDeadByWolfes";
 import ChooseDeadByVillage from "../components/cycle/ChooseDeadByVillage";
 import Day from "../components/cycle/Day";
-import WhoIsDead from "../components/cycle/WhoIsDead";
+import WhoIsDeadByWolfes from "../components/cycle/WhoIsDeadByWolfes";
+import WhoIsDeadByVillage from "../components/cycle/WhoIsDeadByVillage";
 import VillageSpot from "../components/cycle/VillageSpot";
 
 export default {
@@ -30,7 +32,8 @@ export default {
     ChooseDeadByWolfes,
     ChooseDeadByVillage,
     Day,
-    WhoIsDead,
+    WhoIsDeadByWolfes,
+    WhoIsDeadByVillage,
     VillageSpot
   },
   computed: {
@@ -49,8 +52,11 @@ export default {
     day() {
       return this.$store.getters.day;
     },
-    whoIsDead() {
-      return this.$store.getters.whoIsDead;
+    whoIsDeadByWolfes() {
+      return this.$store.getters.whoIsDeadByWolfes;
+    },
+    whoIsDeadByVillage() {
+      return this.$store.getters.whoIsDeadByVillage;
     },
     villageSpot() {
       return this.$store.getters.villageSpot;
