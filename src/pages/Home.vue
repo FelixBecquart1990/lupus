@@ -1,16 +1,19 @@
 <template>
   <div>
       <Range ref="range"/>
+      <Roles ref="roles"/>
   </div>
 </template>
 
 <script>
 import Range from "../components/Range";
+import Roles from "../components/Roles";
 
 export default {
   name: "Home",
   components: {
-    Range
+    Range,
+    Roles
   }
 };
 </script>

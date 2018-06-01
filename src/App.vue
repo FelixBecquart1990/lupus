@@ -14,10 +14,10 @@ export default {
 
 <style>
 
-@font-face {
+/*@font-face {
   font-family: primary;
   src: url(../static/font/Tahu.ttf);
-}
+}*/
 /*@font-face {
   font-family: secondary;
   src: url(../static/font/gothamrnd-medium.ttf);
