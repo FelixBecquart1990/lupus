@@ -3,18 +3,25 @@
   <v-layout>
     <v-flex xs4 offset-xs4 center>
       <v-btn @click="discoverPlayer()" block color="primary" dark>Discover first player</v-btn>
+      <v-layout v-if="currentRole != ''" column align-center>
+        <img v-if="currentRole == 'villager'" src="../../static/img/emojis/villager.png" alt="wolf" class="mb-5">
+        <img v-if="currentRole == 'wolf'" src="../../static/img/emojis/wolf.png" alt="wolf" class="mb-5">
+        <p class="text-xs-center" @click="nextPlayer()">{{ player }} - Tu es un {{ currentRole }}</p>
+      </v-layout>
     </v-flex>
   </v-layout>
 </div>
 </template>
 
 <script>
+
 export default {
   name: "Roles",
   data() {
     return {
       team: [],
-      player: 0
+      player: 0,
+      currentRole: "",
     };
   },
   mounted() {
@@ -41,12 +48,18 @@ export default {
   },
   methods: {
     discoverPlayer() {
-      alert(this.team[this.player].role);
-      this.player++;
       if (this.player >= this.team.length) {
         this.$store.commit("SET_ROLES", false);
         this.$store.commit("SET_CYCLE", true);
+      } else {
+        this.currentRole = this.team[this.player].role;
+        console.log(this.team[this.player].role);
+        this.player++;
       }
+
+    },
+    nextPlayer() {
+
     }
   },
   computed: {
