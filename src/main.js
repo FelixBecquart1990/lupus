@@ -6,6 +6,9 @@ import router from './router'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 
+import * as firebase from "firebase";
+import { store } from "./store";
+
 Vue.use(Vuetify, { theme: {
   primary: '#ee44aa',
   secondary: '#424242',
@@ -23,5 +26,23 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  created() {
+    firebase.initializeApp({
+      apiKey: "AIzaSyBYozTouIa4zvAF9Odu2ng4xoVdxo2NFCo",
+      authDomain: "play-lupus.firebaseapp.com",
+      databaseURL: "https://play-lupus.firebaseio.com",
+      projectId: "play-lupus",
+      storageBucket: "play-lupus.appspot.com",
+      messagingSenderId: "23422226466"
+    });
+    // auth
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.$store.dispatch("fetchUserData", user).then(data => {});
+      } else {
+        console.log("no user");
+      }
+    });
+  }
 })
