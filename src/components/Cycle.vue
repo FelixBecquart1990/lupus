@@ -4,6 +4,8 @@
     <Night ref="night"/>
     <WerewolfSpot ref="werewolfSpot"/>
     <ChooseDead ref="chooseDead"/>
+    <Day ref="day"/>
+    <WhoIsDead ref="whoIsDead"/>
   </div>
 </template>
 
@@ -11,13 +13,17 @@
   import Night from "../components/cycle/Night";
   import WerewolfSpot from "../components/cycle/WerewolfSpot";
   import ChooseDead from "../components/cycle/ChooseDead";
+  import Day from "../components/cycle/Day";
+  import WhoIsDead from "../components/cycle/WhoIsDead";
 
   export default {
     name: "Cycle",
     components: {
       Night,
       WerewolfSpot,
-      ChooseDead
+      ChooseDead,
+      Day,
+      WhoIsDead
     }
   };
 </script>

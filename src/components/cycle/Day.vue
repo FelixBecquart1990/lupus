@@ -2,8 +2,8 @@
   <v-container fluid>
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
-        <img src="../../../static/img/emojis/fuck.png" alt="fuck" class="mb-5">
-        <p class="text-xs-center"> Les loup garous se réveillent et désignent leur victime </p>
+        <img src="../../../static/img/emojis/day.png" alt="day" class="mb-5">
+        <p class="text-xs-center"> Le jour se lève, le village se réveille</p>
       </v-layout>
     </v-slide-y-transition>
   </v-container>
@@ -11,7 +11,7 @@
 
 <script>
   export default {
-    name: "WerewolfSpot"
+    name: "Day"
   };
 </script>
 
