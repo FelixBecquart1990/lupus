@@ -12,6 +12,7 @@ export default {
     chooseDeadByVillage: false,
     day: false,
     whoIsDeadByWolfes: false,
+    whoIsDeadByVillage: false,
     villageSpot: false
   },
   mutations: {

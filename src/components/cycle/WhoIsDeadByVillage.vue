@@ -15,7 +15,7 @@ export default {
   methods: {
     next() {
       this.$store.commit("SET_WHO_IS_DEAD_BY_VILLAGE", false);
-      this.$store.commit("SET_VILLAGE_NIGHT", true);
+      this.$store.commit("SET_NIGHT", true);
     }
   },
   computed: {
