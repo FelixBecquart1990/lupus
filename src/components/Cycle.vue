@@ -15,6 +15,7 @@
   import ChooseDead from "../components/cycle/ChooseDead";
   import Day from "../components/cycle/Day";
   import WhoIsDead from "../components/cycle/WhoIsDead";
+  import VillageSpot from "../components/cycle/VillageSpot";
 
   export default {
     name: "Cycle",
@@ -23,7 +24,8 @@
       WerewolfSpot,
       ChooseDead,
       Day,
-      WhoIsDead
+      WhoIsDead,
+      VillageSpot
     }
   };
 </script>
