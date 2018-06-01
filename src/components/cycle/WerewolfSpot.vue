@@ -2,8 +2,8 @@
   <v-container fluid>
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
-        <img src="../../../static/img/emojis/moon.png" alt="moon" class="mb-5">
-        <p class="text-xs-center"> La nuit tombe, tout le monde s'endort </p>
+        <img src="../../../static/img/emojis/fuck.png" alt="moon" class="mb-5">
+        <p class="text-xs-center"> Les loup garous se réveillent et désignent leur victime </p>
       </v-layout>
     </v-slide-y-transition>
   </v-container>

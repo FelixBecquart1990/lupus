@@ -2,15 +2,19 @@
   <div>
     cycle
     <Night ref="night"/>
+    <WerewolfSpot ref="werewolfSpot"/>
   </div>
 </template>
 
 <script>
   import Night from "../components/cycle/Night";
+  import WerewolfSpot from "../components/cycle/WerewolfSpot";
+
   export default {
     name: "Cycle",
     components: {
-      Night
+      Night,
+      WerewolfSpot
     }
   };
 </script>
