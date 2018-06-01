@@ -15,7 +15,7 @@ export default {
   methods: {
     next() {
       this.$store.commit("SET_WEREWOLF_SPOT", false);
-      this.$store.commit("SET_CHOOSE_DEAD", true);
+      this.$store.commit("SET_CHOOSE_DEAD_WOLFES", true);
     }
   }
 };

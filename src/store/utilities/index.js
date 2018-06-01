@@ -8,7 +8,8 @@ export default {
     cycle: false,
     night: true,
     werewolfSpot: false,
-    chooseDead: false,
+    chooseDeadByWolfes: false,
+    chooseDeadByVillage: false,
     day: false,
     whoIsDead: false,
     villageSpot: false
@@ -32,8 +33,11 @@ export default {
     SET_WEREWOLF_SPOT(state, payload) {
       state.werewolfSpot = payload;
     },
-    SET_CHOOSE_DEAD(state, payload) {
-      state.chooseDead = payload;
+    SET_CHOOSE_DEAD_WOLFES(state, payload) {
+      state.chooseDeadByWolfes = payload;
+    },
+    SET_CHOOSE_DEAD_VILLAGE(state, payload) {
+      state.chooseDeadByVillage = payload;
     },
     SET_DAY(state, payload) {
       state.day = payload;
@@ -73,8 +77,11 @@ export default {
     werewolfSpot(state) {
       return state.werewolfSpot;
     },
-    chooseDead(state) {
-      return state.chooseDead;
+    chooseDeadByWolfes(state) {
+      return state.chooseDeadByWolfes;
+    },
+    chooseDeadByVillage(state) {
+      return state.chooseDeadByVillage;
     },
     day(state) {
       return state.day;

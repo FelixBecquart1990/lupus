@@ -15,7 +15,7 @@ export default {
   methods: {
     next() {
       this.$store.commit("SET_VILLAGE_SPOT", false);
-      this.$store.commit("SET_CHOOSE_DEAD", true);
+      this.$store.commit("SET_CHOOSE_DEAD_VILLAGE", true);
     }
   }
 };
