@@ -3,13 +3,14 @@
   <v-layout>
     <v-flex xs4 offset-xs4 center>
       <v-btn v-if="hidden" @click="discoverPlayer()" block color="primary" dark>Joueur {{player+1}} - Découvrir mon rôle</v-btn>
+      <v-btn v-if="!hidden && this.player < this.team.length" @click="hide()" block color="primary" dark>Joueur suivant</v-btn>
+      <v-btn v-if="this.player >= this.team.length" @click="next()" block color="primary" dark>Continuer</v-btn>
+
       <v-layout v-if="currentRole != '' && !hidden" column align-center>
         <img v-if="currentRole == 'villager'" src="../../static/img/emojis/villager.png" alt="wolf" class="mb-5">
         <img v-if="currentRole == 'wolf'" src="../../static/img/emojis/wolf.png" alt="wolf" class="mb-5">
         <p class="text-xs-center" @click="nextPlayer()">{{ player }} - Tu es un {{ currentRole }}</p>
       </v-layout>
-      <v-btn v-if="!hidden && this.player < this.team.length" @click="hide()" block color="primary" dark>Joueur suivant</v-btn>
-      <v-btn v-if="this.player >= this.team.length" @click="next()" block color="primary" dark>Continuer</v-btn>
 
     </v-flex>
   </v-layout>
@@ -61,8 +62,6 @@ export default {
     }
 
     this.$store.commit("SET_TEAM", this.team);
-
-    console.log(this.team);
   },
   methods: {
     next(){
@@ -79,8 +78,7 @@ export default {
         console.log(this.team[this.player].role);
         this.player++;
       
-    },
-    nextPlayer() {}
+    }
   },
   computed: {
     numberOfPlayers() {

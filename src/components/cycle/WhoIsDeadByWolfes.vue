@@ -15,6 +15,7 @@ export default {
   name: "WhoIsDeadByWolfes",
   methods: {
     next() {
+      this.$store.dispatch("checkIfEndGame")
       this.$store.commit("SET_WHO_IS_DEAD_BY_WOLFES", false);
       this.$store.commit("SET_VILLAGE_SPOT", true);
     }
