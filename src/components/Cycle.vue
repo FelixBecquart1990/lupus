@@ -10,6 +10,7 @@
     <WhoIsDeadByWolfes v-if="whoIsDeadByWolfes" ref="whoIsDeadByWolfes"/>
     <WhoIsDeadByVillage v-if="whoIsDeadByVillage" ref="whoIsDeadByVillage"/>
     <VillageSpot v-if="villageSpot" ref="villageSpot"/>
+    <ModalTeam ref="modalTeam"/>
 
   </div>
 </template>
@@ -23,6 +24,7 @@ import Day from "../components/cycle/Day";
 import WhoIsDeadByWolfes from "../components/cycle/WhoIsDeadByWolfes";
 import WhoIsDeadByVillage from "../components/cycle/WhoIsDeadByVillage";
 import VillageSpot from "../components/cycle/VillageSpot";
+import ModalTeam from "../components/ModalTeam";
 
 export default {
   name: "Cycle",
@@ -34,7 +36,8 @@ export default {
     Day,
     WhoIsDeadByWolfes,
     WhoIsDeadByVillage,
-    VillageSpot
+    VillageSpot,
+    ModalTeam
   },
   computed: {
     night() {

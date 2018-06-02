@@ -1,7 +1,8 @@
 export default {
   state: {
     numberOfPlayers: 4,
-    team: []
+    team: [],
+    modalTeam:false,
   },
   mutations: {
     SET_NUMBER_OF_PLAYERS(state, payload) {
@@ -9,6 +10,9 @@ export default {
     },
     SET_TEAM(state, payload) {
       state.team = payload;
+    },
+    SET_MODAL_TEAM(state, payload) {
+      state.modalTeam = payload
     }
   },
   getters: {
@@ -17,6 +21,9 @@ export default {
     },
     team(state) {
       return state.team;
+    },
+    modalTeam(state) {
+      return state.modalTeam;
     }
   },
   actions: {
