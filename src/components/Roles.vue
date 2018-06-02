@@ -14,20 +14,34 @@
 </template>
 
 <script>
-
 export default {
   name: "Roles",
   data() {
     return {
       team: [],
       player: 0,
-      currentRole: "",
+      currentRole: ""
     };
   },
   mounted() {
-    let roles = ["wolf"];
-    for (let i = 0; i < this.numberOfPlayers - 1; i++) {
+    let roles = [];
+    /*for (let i = 0; i < this.numberOfPlayers - 1; i++) {
       roles.push("villager");
+    }*/
+    if (this.numberOfPlayers == 4) {
+      roles = ["wolf", "villager", "villager", "villager"];
+    } else if (this.numberOfPlayers == 5) {
+      roles = ["wolf", "villager", "villager", "villager", "villager"];
+    }else if (this.numberOfPlayers == 6) {
+      roles = ["wolf", "wolf", "villager", "villager", "villager", "villager"];
+    }else if (this.numberOfPlayers == 7) {
+      roles = ["wolf", "wolf", "villager", "villager", "villager", "villager", "villager"];
+    }else if (this.numberOfPlayers == 8) {
+      roles = ["wolf", "wolf", "villager", "villager", "villager", "villager", "villager", "villager"];
+    }else if (this.numberOfPlayers == 9) {
+      roles = ["wolf", "wolf", "villager", "villager", "villager", "villager", "villager", "villager", "villager"];
+    }else if (this.numberOfPlayers == 10) {
+      roles = ["wolf", "wolf", "wolf", "villager", "villager", "villager", "villager", "villager", "villager", "villager"];
     }
 
     const shuffleArray = arr =>
@@ -39,7 +53,7 @@ export default {
     roles = shuffleArray(roles);
 
     for (let i = 0; i < this.numberOfPlayers; i++) {
-      this.team.push({role:roles[i], killed:false, player:i+1});
+      this.team.push({ role: roles[i], killed: false, player: i + 1 });
     }
 
     this.$store.commit("SET_TEAM", this.team);
@@ -56,11 +70,8 @@ export default {
         console.log(this.team[this.player].role);
         this.player++;
       }
-
     },
-    nextPlayer() {
-
-    }
+    nextPlayer() {}
   },
   computed: {
     numberOfPlayers() {

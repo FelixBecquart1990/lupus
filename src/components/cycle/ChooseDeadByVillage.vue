@@ -1,30 +1,45 @@
 <template>
-  <v-container fluid>
-    <v-slide-y-transition mode="out-in">
-      <v-layout>
-        <v-flex v-for="i in this.numberOfPlayers" xs12>
-          <v-btn v-if="team[i-1].killed==false" @click="declarePlayer(i)" @click.native.stop="dialog = true" block color="primary" dark>{{ i }}</v-btn>
-        </v-flex>
-        <v-dialog v-model="dialog" max-width="290">
-          <v-card>
-            <v-card-text>village - Êtes-vous sûr de tuer le joueur {{ declaredPlayer }}</v-card-text>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn color="red darken-1" flat="flat" @click.native="dialog = false">Disagree</v-btn>
-              <v-btn color="green darken-1" flat="flat" @click="killPlayer(declaredPlayer)" @click.native="dialog = false">Agree</v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-dialog>
-      </v-layout>
-    </v-slide-y-transition>
-  </v-container>
+  <div>
+    <v-layout row wrap>
+      <v-flex v-for="i in this.numberOfPlayers" xs6 :key="`6${i}`">
+        <v-btn v-if="team[i-1].killed==false" @click="declarePlayer(i)" color="primary">player {{ i }}</v-btn>
+      </v-flex>
+    </v-layout>
+
+    <v-dialog v-model="dialog" max-width="290">
+      <v-card>
+        <v-card-text>village - Êtes-vous sûr de tuer le joueur {{ declaredPlayer }}</v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="red darken-1" flat="flat" @click.native="dialog = false">Disagree</v-btn>
+         <v-btn color="green darken-1" flat="flat" @click="killPlayer(declaredPlayer)" @click.native="dialog = false">Agree</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+</div>
 </template>
 
 <script>
 export default {
   name: "ChooseDeadByVillage",
+  data() {
+    return {
+      newTeam: null,
+      dialog: false,
+      declaredPlayer: 0
+    };
+  },
+  computed: {
+    numberOfPlayers() {
+      return this.$store.getters.numberOfPlayers;
+    },
+    team() {
+      return this.$store.getters.team;
+    }
+  },
   methods: {
     declarePlayer(i) {
+      this.dialog = true;
       this.declaredPlayer = i;
       console.log("you have declared player", this.declaredPlayer);
     },
@@ -43,21 +58,6 @@ export default {
       this.$store.commit("SET_CHOOSE_DEAD_VILLAGE", false);
       this.$store.commit("SET_WHO_IS_DEAD_BY_VILLAGE", true);
     }
-  },
-  computed: {
-    numberOfPlayers() {
-      return this.$store.getters.numberOfPlayers;
-    },
-    team() {
-      return this.$store.getters.team;
-    }
-  },
-  data() {
-    return {
-      newTeam: null,
-      dialog: false,
-      declaredPlayer: 0
-    };
   }
 };
 </script>

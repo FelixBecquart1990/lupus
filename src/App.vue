@@ -25,4 +25,5 @@ export default {
 * {
   font-family: primary;
 }
+
 </style>

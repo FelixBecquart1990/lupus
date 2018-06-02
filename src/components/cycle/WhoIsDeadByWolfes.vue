@@ -2,7 +2,8 @@
   <v-container fluid @click="next()">
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
-        <img src="../../../static/img/emojis/facepalm.png" alt="day" class="mb-5">
+        <img v-if="dead.role == 'villager'" src="../../../static/img/emojis/facepalm.png" alt="day" class="mb-5">
+        <img v-if="dead.role == 'wolf'" src="../../../static/img/emojis/wolf.png" alt="day" class="mb-5">
         <p class="text-xs-center">Le joueur {{dead.player}} a été tué <br>C'était un {{dead.role}}</p>
       </v-layout>
     </v-slide-y-transition>
