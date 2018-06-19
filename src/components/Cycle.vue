@@ -1,15 +1,14 @@
 <template>
   <div>
-    cycle
 
-    <Night v-if="night" ref="night"/>
-    <WerewolfSpot v-if="werewolfSpot" ref="werewolfSpot"/>
-    <ChooseDeadByWolfes v-if="chooseDeadByWolfes" ref="chooseDeadByWolfes"/>
-    <Day v-if="day" ref="day"/>
-    <WhoIsDeadByWolfes v-if="whoIsDeadByWolfes" ref="whoIsDeadByWolfes"/>
-    <VillageSpot v-if="villageSpot" ref="villageSpot"/>
-    <ChooseDeadByVillage v-if="chooseDeadByVillage" ref="chooseDeadByVillage"/>
-    <WhoIsDeadByVillage v-if="whoIsDeadByVillage" ref="whoIsDeadByVillage"/>
+    <Night v-if="night" ref="night" class="center-screen"/>
+    <WerewolfSpot v-if="werewolfSpot" ref="werewolfSpot" class="center-screen"/>
+    <ChooseDeadByWolfes v-if="chooseDeadByWolfes" ref="chooseDeadByWolfes" class="center-screen"/>
+    <Day v-if="day" ref="day" class="center-screen"/>
+    <WhoIsDeadByWolfes v-if="whoIsDeadByWolfes" ref="whoIsDeadByWolfes" class="center-screen"/>
+    <VillageSpot v-if="villageSpot" ref="villageSpot" class="center-screen"/>
+    <ChooseDeadByVillage v-if="chooseDeadByVillage" ref="chooseDeadByVillage" class="center-screen"/>
+    <WhoIsDeadByVillage v-if="whoIsDeadByVillage" ref="whoIsDeadByVillage" class="center-screen"/>
     
     <ModalTeam ref="modalTeam"/>
     <ModalEndGame ref="modalEndGame"/>
@@ -81,19 +80,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>

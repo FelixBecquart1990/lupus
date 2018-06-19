@@ -9,7 +9,6 @@ export default {
   },
   actions: {
     triggerBonus({ commit }){
-      console.log("trigger bonus")
       commit("SET_ONE_SHOT_TO_RANDOM_PLAYER", true);
     }
   },
