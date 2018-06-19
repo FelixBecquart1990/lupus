@@ -1,8 +1,12 @@
 <template>
 <div>
-    <v-layout row wrap>
-      <v-flex v-for="i in this.numberOfPlayers" xs6 :key="`6${i}`">
-        <v-btn v-if="team[i-1].killed==false" @click="declarePlayer(i)" color="primary">player {{ i }}</v-btn>
+
+    <v-layout row wrap v-for="i in Math.round(this.numberOfPlayers/2)" xs12 :key="`12${i}`">
+      <v-flex xs3 v-if="(numberOfPlayers/2 == Math.round(numberOfPlayers/2)) || i != Math.round(numberOfPlayers/2)">
+        <v-btn :disabled="team[numberOfPlayers - i].killed" @click="declarePlayer(numberOfPlayers - i + 1)" color="primary">player {{ numberOfPlayers - i + 1 }}</v-btn>
+      </v-flex>
+      <v-flex xs3>
+        <v-btn :disabled="team[i-1].killed" @click="declarePlayer(i)" color="primary">player {{ i }}</v-btn>
       </v-flex>
     </v-layout>
 

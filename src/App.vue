@@ -26,4 +26,8 @@ export default {
   font-family: primary;
 }
 
+#app {
+  background-color: #9E4770;
+}
+
 </style>
