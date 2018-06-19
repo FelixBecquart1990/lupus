@@ -17,14 +17,15 @@
 </template>
 
 <script>
-import Night from "../components/cycle/Night";
-import WerewolfSpot from "../components/cycle/WerewolfSpot";
-import ChooseDeadByWolfes from "../components/cycle/ChooseDeadByWolfes";
-import ChooseDeadByVillage from "../components/cycle/ChooseDeadByVillage";
-import Day from "../components/cycle/Day";
-import WhoIsDeadByWolfes from "../components/cycle/WhoIsDeadByWolfes";
-import WhoIsDeadByVillage from "../components/cycle/WhoIsDeadByVillage";
-import VillageSpot from "../components/cycle/VillageSpot";
+import Night from "../components/cycle/A-Night";
+import WerewolfSpot from "../components/cycle/B-WerewolfSpot";
+import ChooseDeadByWolfes from "../components/cycle/C-ChooseDeadByWolfes";
+import Day from "../components/cycle/D-Day";
+import WhoIsDeadByWolfes from "../components/cycle/E-WhoIsDeadByWolfes";
+import VillageSpot from "../components/cycle/F-VillageSpot";
+import ChooseDeadByVillage from "../components/cycle/G-ChooseDeadByVillage";
+import WhoIsDeadByVillage from "../components/cycle/H-WhoIsDeadByVillage";
+
 import ModalTeam from "../components/ModalTeam";
 import ModalEndGame from "../components/ModalEndGame";
 
