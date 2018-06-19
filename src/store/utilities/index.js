@@ -2,7 +2,8 @@
 export default {
   state: {
     loading: false,
-    range: true,
+    howtoplay: true,
+    range: false,
     roles: false,
     cycle: false,
     night: true,
@@ -17,6 +18,9 @@ export default {
   mutations: {
     SET_LOADING(state, payload) {
       state.loading = payload;
+    },
+    SET_HOWTOPLAY(state, payload) {
+      state.howtoplay = payload;
     },
     SET_RANGE(state, payload) {
       state.range = payload;
@@ -64,6 +68,9 @@ export default {
   getters: {
     loading(state) {
       return state.loading;
+    },
+    howtoplay(state) {
+      return state.howtoplay;
     },
     range(state) {
       return state.range;
