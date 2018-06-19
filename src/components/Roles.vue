@@ -3,19 +3,20 @@
   <v-layout>
     <v-flex xs4 offset-xs4 center>
       <v-btn v-if="hidden" @click="discoverPlayer()" block color="primary" dark>Joueur {{player+1}} - Découvrir mon rôle</v-btn>
-      <v-btn v-if="!hidden && this.player < this.team.length" @click="hide()" block color="primary" dark>Joueur suivant</v-btn>
-      <v-btn v-if="this.player >= this.team.length" @click="next()" block color="primary" dark>Continuer</v-btn>
+      <v-btn v-if="!hidden && this.player + 1 < this.team.length" @click="hide()" block color="primary" dark>Joueur suivant</v-btn>
+      <v-btn v-if="this.player + 1 >= this.team.length && !hidden" @click="next()" block color="primary" dark>Continuer</v-btn>
 
       <v-layout v-if="currentRole != '' && !hidden" column align-center>
         <img v-if="currentRole == 'villager'" src="../../static/img/emojis/villager.png" alt="wolf" class="mb-5">
         <img v-if="currentRole == 'wolf'" src="../../static/img/emojis/wolf.png" alt="wolf" class="mb-5">
-        <p class="text-xs-center" @click="nextPlayer()">{{ player }} - Tu es un {{ currentRole }}</p>
+        <p class="text-xs-center">{{ player + 1 }} - Tu es un {{ currentRole }}</p>
       </v-layout>
 
 
     </v-flex>
+
   </v-layout>
-  <div id="playerNumber">{{ player }}</div>
+  <div id="playerNumber">{{ player + 1 }}</div>
 </div>
 </template>
 
@@ -71,14 +72,14 @@ export default {
       this.$store.commit("SET_CYCLE", true);
     },
     hide(){
-      this.hidden = true
+      this.hidden = true;
+      this.player++;
     },
     discoverPlayer() {
       this.hidden = false
+      this.currentRole = this.team[this.player].role;
+      //console.log(this.team[this.player].role);
 
-        this.currentRole = this.team[this.player].role;
-        //console.log(this.team[this.player].role);
-        this.player++;
 
     }
   },
@@ -92,7 +93,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #playerNumber {
-  display: block;
+  display: float;
   bottom: 0px;
+  left: 0px;
 }
 </style>
