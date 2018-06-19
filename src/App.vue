@@ -36,4 +36,11 @@ export default {
   justify-content: center;
   align-items: center;
 }
+.round-button{
+  height: 100px;
+  width: 100px;
+  border-radius:50%;
+  margin-right:auto;
+  margin-left:auto;
+}
 </style>
