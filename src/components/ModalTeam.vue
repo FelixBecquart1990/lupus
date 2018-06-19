@@ -1,6 +1,6 @@
 <template>
 <div>
-  
+
     <v-btn
       @click="openModal()"
         dark
@@ -22,9 +22,12 @@
           <v-spacer></v-spacer>
       </v-toolbar>
 
-    <v-layout row wrap>
-      <v-flex v-for="i in this.numberOfPlayers" xs6 :key="`6${i}`">
-        <v-btn v-if="team[i-1].killed==false" color="primary">player {{ i }}<br>{{team[i-1].role}}</v-btn>
+    <v-layout row wrap v-for="i in Math.round(this.numberOfPlayers/2)" xs12 :key="`12${i}`">
+      <v-flex xs3 v-if="(numberOfPlayers/2 == Math.round(numberOfPlayers/2)) || i != Math.round(numberOfPlayers/2)">
+        <v-btn :disabled="team[numberOfPlayers - i].killed" color="primary">player {{ numberOfPlayers - i + 1 }} <br>{{team[numberOfPlayers - i].role}}</v-btn>
+      </v-flex>
+      <v-flex xs3>
+        <v-btn :disabled="team[i-1].killed" color="primary">player {{ i }}<br>{{team[i-1].role}}</v-btn>
       </v-flex>
     </v-layout>
 
