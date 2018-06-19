@@ -14,10 +14,15 @@
     <ModalTeam ref="modalTeam"/>
     <ModalEndGame ref="modalEndGame"/>
 
+    <Bonus ref="bonus"/>
+
+
   </div>
 </template>
 
 <script>
+import Bonus from "./Bonus";
+
 import Night from "../components/cycle/A-Night";
 import WerewolfSpot from "../components/cycle/B-WerewolfSpot";
 import ChooseDeadByWolfes from "../components/cycle/C-ChooseDeadByWolfes";
@@ -33,6 +38,7 @@ import ModalEndGame from "../components/ModalEndGame";
 export default {
   name: "Cycle",
   components: {
+    Bonus,
     Night,
     WerewolfSpot,
     ChooseDeadByWolfes,

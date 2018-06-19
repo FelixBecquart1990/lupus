@@ -75,7 +75,7 @@ export default {
       this.hidden = false
 
         this.currentRole = this.team[this.player].role;
-        console.log(this.team[this.player].role);
+        //console.log(this.team[this.player].role);
         this.player++;
       
     }

@@ -1,4 +1,4 @@
-import * as firebase from "firebase";
+/*import * as firebase from "firebase";
 
 export default {
   state: {
@@ -55,14 +55,8 @@ export default {
       .on("child_changed", snapshot => {
         //console.log(snapshot.key);
         //console.log(snapshot.val());
-        /*if (snapshot.key == "elo") {
-          commit("SET_ELO", snapshot.val());
-        }
-        if (snapshot.key == "battleInProgress") {
-          commit("SET_BATTLE_IN_PROGRESS", snapshot.val());
-          commit("SET_SNACKBAR", "New battle available");
-        }*/
       });
     },
   }
 };
+*/

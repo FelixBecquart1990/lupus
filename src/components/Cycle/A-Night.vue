@@ -6,24 +6,26 @@
         <p class="text-xs-center"> La nuit tombe, tout le monde s'endort </p>
       </v-layout>
     </v-slide-y-transition>
+
   </v-container>
 </template>
 
 <script>
-  export default {
-    name: "Night",
-    methods:{
-      next(){
-        this.$store.commit("SET_NIGHT", false);
-        this.$store.commit("SET_WEREWOLF_SPOT", true);
-      }
+export default {
+  name: "Night",
+  methods: {
+    next() {
+      this.$store.commit("SET_NIGHT", false);
+      this.$store.commit("SET_WEREWOLF_SPOT", true);
     }
-  };
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {
