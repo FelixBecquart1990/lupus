@@ -5,11 +5,12 @@
     <Night v-if="night" ref="night"/>
     <WerewolfSpot v-if="werewolfSpot" ref="werewolfSpot"/>
     <ChooseDeadByWolfes v-if="chooseDeadByWolfes" ref="chooseDeadByWolfes"/>
-    <ChooseDeadByVillage v-if="chooseDeadByVillage" ref="chooseDeadByVillage"/>
     <Day v-if="day" ref="day"/>
     <WhoIsDeadByWolfes v-if="whoIsDeadByWolfes" ref="whoIsDeadByWolfes"/>
-    <WhoIsDeadByVillage v-if="whoIsDeadByVillage" ref="whoIsDeadByVillage"/>
     <VillageSpot v-if="villageSpot" ref="villageSpot"/>
+    <ChooseDeadByVillage v-if="chooseDeadByVillage" ref="chooseDeadByVillage"/>
+    <WhoIsDeadByVillage v-if="whoIsDeadByVillage" ref="whoIsDeadByVillage"/>
+    
     <ModalTeam ref="modalTeam"/>
     <ModalEndGame ref="modalEndGame"/>
 
