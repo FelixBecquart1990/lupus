@@ -32,6 +32,8 @@ export default {
       if (playerNumber < this.team.length && this.team[playerNumber].killed == false) {
         this.dialog = true
         this.playerWhoDrink = this.team[playerNumber].player
+      }else{
+        this.$store.commit("SET_ONE_SHOT_TO_RANDOM_PLAYER", false);
       }
     },
     done() {
