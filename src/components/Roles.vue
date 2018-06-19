@@ -2,21 +2,25 @@
 <div>
   <v-layout>
     <v-flex xs4 offset-xs4 center>
-      <v-btn v-if="hidden" @click="discoverPlayer()" block color="primary" dark>Joueur {{player+1}} - Découvrir mon rôle</v-btn>
-      <v-btn v-if="!hidden && this.player + 1 < this.team.length" @click="hide()" block color="primary" dark>Joueur suivant</v-btn>
-      <v-btn v-if="this.player + 1 >= this.team.length && !hidden" @click="next()" block color="primary" dark>Continuer</v-btn>
+      <div v-if="hidden" @click="discoverPlayer()" block color="primary" class="text-xs-center">
+        <h1>Prêt ?</h1>
+      </div>
+      <!--<v-btn v-if="!hidden && this.player + 1 < this.team.length" @click="hide()" block color="primary" dark>Joueur suivant</v-btn>
+      <v-btn v-if="this.player + 1 >= this.team.length && !hidden" @click="next()" block color="primary" dark>Continuer</v-btn>-->
 
-      <v-layout v-if="currentRole != '' && !hidden" column align-center>
+      <v-layout v-if="!hidden && this.player < this.team.length" column align-center @click="hide()">
         <img v-if="currentRole == 'villager'" src="../../static/img/emojis/villager.png" alt="wolf" class="mb-5">
         <img v-if="currentRole == 'wolf'" src="../../static/img/emojis/wolf.png" alt="wolf" class="mb-5">
-        <p class="text-xs-center">{{ player + 1 }} - Tu es un {{ currentRole }}</p>
+        <!--<p class="text-xs-center">Tu es un {{ currentRole }}</p>-->
       </v-layout>
 
 
     </v-flex>
 
   </v-layout>
-  <div id="playerNumber">{{ player + 1 }}</div>
+  <div id="playerNumber">
+    <h1>{{ player + 1 }}</h1>
+  </div>
 </div>
 </template>
 
@@ -72,8 +76,15 @@ export default {
       this.$store.commit("SET_CYCLE", true);
     },
     hide(){
-      this.hidden = true;
-      this.player++;
+      if (this.player == this.team.length -1)
+      {
+        this.$store.commit("SET_ROLES", false);
+        this.$store.commit("SET_CYCLE", true);
+      }else{
+        this.hidden = true;
+        this.player++;
+      }
+
     },
     discoverPlayer() {
       this.hidden = false
@@ -93,8 +104,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #playerNumber {
-  display: float;
-  bottom: 0px;
-  left: 0px;
+  position: absolute;
+  right: auto;
+  bottom: 0;
+}
+#playerNumber h1 {
+  font-size: 10em;
 }
 </style>
