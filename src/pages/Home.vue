@@ -2,7 +2,7 @@
   <div>
       <HowToPlay v-if="howtoplay" ref="howtoplay"/>
       <Range v-if="range" ref="range"/>
-      <Roles v-if="roles" ref="roles"/>
+      <Roles v-if="roles" class="center-screen" ref="roles"/>
       <Cycle v-if="cycle" ref="cycle"/>
   </div>
 </template>

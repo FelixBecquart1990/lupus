@@ -1,5 +1,5 @@
 <template>
-  <div>    
+  <div>
     <v-dialog v-model="dialog" max-width="290" persistent>
       <v-card>
         <v-card-text>Le joueur {{ playerWhoDrink }} boit une gorgée</v-card-text>
@@ -27,7 +27,7 @@ export default {
   methods: {
     selectRandomPlayer() {
       // random number between 0 and 3*number of players
-      let playerNumber = 100//Math.floor(Math.random() * this.team.length*3)
+      let playerNumber = 200//Math.floor(Math.random() * this.team.length*3)
       console.log("random player number: ", playerNumber)
       if (playerNumber < this.team.length && this.team[playerNumber].killed == false) {
         this.dialog = true
