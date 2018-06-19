@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-flex xs12 class="text-xs-center">
+    <v-flex xs12 class="text-xs-center" style="margin-top:150px;">
       <h2>1. Choisissez 1 Maître du jeu et asseyez vous en cercle autour de lui</h2>
       <h2>2. Faîtes tourner le téléphone pour que chacun découvre son rôle</h2>
       <h2>3. Le Maître du jeu suit les indications qui s'affichent à l'écran</h2>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin-top:150px;">
     <v-flex xs12 class="text-xs-center">
       <h1>Vous êtes le Maître du Jeu</h1>
       <h3>Combien de personnes jouent avec vous ?</h3>
