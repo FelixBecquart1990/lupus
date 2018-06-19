@@ -1,10 +1,6 @@
 <template>
   <div>
-    bonus
-
     <OneShotToRandomPlayer  v-if="oneShotToRandomPlayer" ref="oneShotToRandomPlayer"/>
-
-
   </div>
 </template>
 
@@ -21,7 +17,6 @@ export default {
       return this.$store.getters.night;
     }*/
     oneShotToRandomPlayer() {
-      console.log("changement detecté")
       return this.$store.getters.oneShotToRandomPlayer;
     }
   }

@@ -27,7 +27,11 @@ export default {
   methods: {
     selectRandomPlayer() {
       // random number between 0 and 3*number of players
+<<<<<<< HEAD
       let playerNumber = 200//Math.floor(Math.random() * this.team.length*3)
+=======
+      let playerNumber = 100//Math.floor(Math.random() * this.team.length*3)
+>>>>>>> 6217011516c96088989472ed3c1581d8a194bd7c
       console.log("random player number: ", playerNumber)
       if (playerNumber < this.team.length && this.team[playerNumber].killed == false) {
         this.dialog = true

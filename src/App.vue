@@ -30,4 +30,10 @@ export default {
   background-color: #9E4770;
 }
 
+.center-screen {
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>
