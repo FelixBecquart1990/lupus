@@ -12,8 +12,10 @@
         <p class="text-xs-center" @click="nextPlayer()">{{ player }} - Tu es un {{ currentRole }}</p>
       </v-layout>
 
+
     </v-flex>
   </v-layout>
+  <div id="playerNumber">{{ player }}</div>
 </div>
 </template>
 
@@ -77,7 +79,7 @@ export default {
         this.currentRole = this.team[this.player].role;
         //console.log(this.team[this.player].role);
         this.player++;
-      
+
     }
   },
   computed: {
@@ -89,4 +91,8 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#playerNumber {
+  display: block;
+  bottom: 0px;
+}
 </style>
