@@ -3,11 +3,11 @@
 
     <Night v-if="night" ref="night" class="center-screen"/>
     <WerewolfSpot v-if="werewolfSpot" ref="werewolfSpot" class="center-screen"/>
-    <ChooseDeadByWolfes v-if="chooseDeadByWolfes" ref="chooseDeadByWolfes" class="center-screen"/>
+    <ChooseDeadByWolfes v-if="chooseDeadByWolfes" ref="chooseDeadByWolfes"/>
     <Day v-if="day" ref="day" class="center-screen"/>
     <WhoIsDeadByWolfes v-if="whoIsDeadByWolfes" ref="whoIsDeadByWolfes" class="center-screen"/>
     <VillageSpot v-if="villageSpot" ref="villageSpot" class="center-screen"/>
-    <ChooseDeadByVillage v-if="chooseDeadByVillage" ref="chooseDeadByVillage" class="center-screen"/>
+    <ChooseDeadByVillage v-if="chooseDeadByVillage" ref="chooseDeadByVillage"/>
     <WhoIsDeadByVillage v-if="whoIsDeadByVillage" ref="whoIsDeadByVillage" class="center-screen"/>
     
     <ModalTeam ref="modalTeam"/>

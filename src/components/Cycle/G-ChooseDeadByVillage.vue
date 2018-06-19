@@ -1,11 +1,11 @@
 <template>
   <div>
-    <v-layout row wrap v-for="i in Math.round(this.numberOfPlayers/2)" xs12 :key="`12${i}`">
-      <v-flex xs3 v-if="(numberOfPlayers/2 == Math.round(numberOfPlayers/2)) || i != Math.round(numberOfPlayers/2)">
-        <v-btn :disabled="team[numberOfPlayers - i].killed" @click="declarePlayer(numberOfPlayers - i + 1)" color="primary">player {{ numberOfPlayers - i + 1 }}</v-btn>
+    <v-layout align-center row wrap v-for="i in Math.round(this.numberOfPlayers/2)" xs12 :key="`12${i}`">
+      <v-flex class="text-xs-center" xs6 v-if="(numberOfPlayers/2 == Math.round(numberOfPlayers/2)) || i != Math.round(numberOfPlayers/2)">
+        <v-btn class="round-button" :disabled="team[numberOfPlayers - i].killed" @click="declarePlayer(numberOfPlayers - i + 1)" color="primary">player {{ numberOfPlayers - i + 1 }}</v-btn>
       </v-flex>
-      <v-flex xs3>
-        <v-btn :disabled="team[i-1].killed" @click="declarePlayer(i)" color="primary">player {{ i }}</v-btn>
+      <v-flex class="text-xs-center" xs6>
+        <v-btn class="round-button" :disabled="team[i-1].killed" @click="declarePlayer(i)" color="primary">player {{ i }}</v-btn>
       </v-flex>
     </v-layout>
 
@@ -71,19 +71,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
