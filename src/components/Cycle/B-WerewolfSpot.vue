@@ -12,6 +12,10 @@
 <script>
 export default {
   name: "WerewolfSpot",
+  mounted() {
+    console.log("B-WerewolfSpot");
+    this.$store.dispatch("triggerBonus");
+  },
   methods: {
     next() {
       this.$store.commit("SET_WEREWOLF_SPOT", false);

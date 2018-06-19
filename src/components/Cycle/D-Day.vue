@@ -12,6 +12,10 @@
 <script>
 export default {
   name: "Day",
+  mounted() {
+    console.log("D-Day");
+    this.$store.dispatch("triggerBonus");
+  },
   methods: {
     next() {
       this.$store.commit("SET_DAY", false);

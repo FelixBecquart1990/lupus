@@ -12,6 +12,10 @@
 <script>
 export default {
   name: "VillageSpot",
+  mounted() {
+    console.log("F-VillageSpot");
+    this.$store.dispatch("triggerBonus");
+  },
   methods: {
     next() {
       this.$store.commit("SET_VILLAGE_SPOT", false);

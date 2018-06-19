@@ -4,6 +4,7 @@ import user from './user'
 import utilities from './utilities'
 import team from './team'
 import game from './game'
+import bonus from './bonus'
 
 Vue.use(Vuex);
 
@@ -12,6 +13,7 @@ export const store = new Vuex.Store({
     user,
     utilities,
     team,
-    game
+    game,
+    bonus
   }
 });

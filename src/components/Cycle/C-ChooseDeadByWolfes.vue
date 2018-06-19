@@ -29,6 +29,10 @@ export default {
       declaredPlayer: 0
     };
   },
+  mounted() {
+    console.log("C-ChooseDeadByWolfes");
+    this.$store.dispatch("triggerBonus");
+  },
   computed: {
     numberOfPlayers() {
       return this.$store.getters.numberOfPlayers;

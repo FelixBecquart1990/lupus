@@ -13,9 +13,13 @@
 <script>
 export default {
   name: "WhoIsDeadByWolfes",
+  mounted() {
+    console.log("E-WhoIsDeadByWolfes");
+    this.$store.dispatch("triggerBonus");
+  },
   methods: {
     next() {
-      this.$store.dispatch("checkIfEndGame")
+      this.$store.dispatch("checkIfEndGame");
       this.$store.commit("SET_WHO_IS_DEAD_BY_WOLFES", false);
       this.$store.commit("SET_VILLAGE_SPOT", true);
     }

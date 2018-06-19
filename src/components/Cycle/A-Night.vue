@@ -13,6 +13,10 @@
 <script>
 export default {
   name: "Night",
+  mounted(){
+    console.log("A-Night")
+    this.$store.dispatch("triggerBonus")
+  },
   methods: {
     next() {
       this.$store.commit("SET_NIGHT", false);

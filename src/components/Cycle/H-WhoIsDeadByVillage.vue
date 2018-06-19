@@ -13,9 +13,13 @@
 <script>
 export default {
   name: "WhoIsDeadByVillage",
+  mounted() {
+    console.log("H-WhoIsDeadByVillage");
+    this.$store.dispatch("triggerBonus");
+  },
   methods: {
     next() {
-      this.$store.dispatch("checkIfEndGame")
+      this.$store.dispatch("checkIfEndGame");
       this.$store.commit("SET_WHO_IS_DEAD_BY_VILLAGE", false);
       this.$store.commit("SET_NIGHT", true);
     }

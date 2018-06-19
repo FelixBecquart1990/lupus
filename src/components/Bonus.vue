@@ -2,7 +2,7 @@
   <div>
     bonus
 
-    <OneShotToRandomPlayer ref="oneShotToRandomPlayer"/>
+    <OneShotToRandomPlayer  v-if="oneShotToRandomPlayer" ref="oneShotToRandomPlayer"/>
 
 
   </div>
@@ -20,11 +20,14 @@ export default {
     /*night() {
       return this.$store.getters.night;
     }*/
+    oneShotToRandomPlayer() {
+      console.log("changement detecté")
+      return this.$store.getters.oneShotToRandomPlayer;
+    }
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>
